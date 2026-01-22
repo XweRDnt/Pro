@@ -1,0 +1,358 @@
+html_content = """<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фитнес-клуб "Атлетика"</title>
+    <style>
+        body {
+            font-family: 'Montserrat', 'Roboto', sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        h1, h2, h3 {
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .accent {
+            color: #39FF14; /* Neon Green */
+        }
+        header {
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo-img {
+            height: 50px;
+            width: auto;
+        }
+        .logo-text {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #ffffff;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 0.9em;
+            text-transform: uppercase;
+        }
+        nav a:hover {
+            color: #39FF14;
+        }
+        .hero {
+            position: relative;
+            background-color: #000000;
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+        }
+        /* Abstract background shapes instead of external image for reliability */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #1a1a1a 25%, #000000 25%, #000000 50%, #1a1a1a 50%, #1a1a1a 75%, #000000 75%, #000000 100%);
+            background-size: 40px 40px;
+            opacity: 0.1;
+            z-index: 1;
+        }
+        .hero-content {
+            z-index: 2;
+            animation: slideUp 1.5s ease-out;
+            padding: 20px;
+        }
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+        .hero p {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        .btn {
+            background-color: #39FF14;
+            color: #000000;
+            padding: 15px 40px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 30px;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: 2px solid #39FF14;
+        }
+        .btn:hover {
+            background-color: transparent;
+            color: #39FF14;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(57, 255, 20, 0.4);
+        }
+        section {
+            padding: 80px 10%;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 2.5em;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: #39FF14;
+            margin: 20px auto 0;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .card {
+            background-color: #252525;
+            padding: 30px;
+            border-radius: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background-color: #39FF14;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .card h3 {
+            margin-top: 0;
+            color: #39FF14;
+        }
+        .trainer-card {
+            text-align: center;
+        }
+        .trainer-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: #333;
+            margin: 0 auto 20px;
+            border: 3px solid #39FF14;
+            object-fit: cover;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        input, textarea {
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #444;
+            background-color: #333;
+            color: #fff;
+            font-family: inherit;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #39FF14;
+        }
+        footer {
+            background-color: #000000;
+            text-align: center;
+            padding: 40px;
+            border-top: 1px solid #333;
+        }
+        
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 20px;
+            }
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            nav a {
+                margin: 0;
+            }
+            .hero h1 {
+                font-size: 2.5em;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <div class="logo-container">
+        <!-- Assuming the logo file is in the same directory -->
+        <img src="image_1769108985648137.png" alt="Атлетика" class="logo-img">
+        <span class="logo-text">АТЛЕТИКА</span>
+    </div>
+    <nav>
+        <a href="#home">Главная</a>
+        <a href="#about">О нас</a>
+        <a href="#services">Услуги</a>
+        <a href="#trainers">Тренеры</a>
+        <a href="#contact">Контакты</a>
+    </nav>
+</header>
+
+<section id="home" class="hero">
+    <div class="hero-content">
+        <h1>АТЛЕТИКА: <span class="accent">ДОСТИГАЙ ВЕРШИН</span></h1>
+        <p>Современный фитнес-клуб с новейшим оборудованием, профессиональными тренерами и атмосферой успеха.</p>
+        <a href="#contact" class="btn">Получить пробную тренировку</a>
+    </div>
+</section>
+
+<section id="about">
+    <h2 class="section-title">О Нас</h2>
+    <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+        <p style="font-size: 1.1em; margin-bottom: 20px;">Мы помогаем людям становиться лучше каждый день, укрепляя тело и дух.</p>
+        <p>Клуб "Атлетика" — это больше, чем просто зал. Это сообщество единомышленников, объединенных целью самосовершенствования. Мы создали пространство, где технологии встречаются с комфортом.</p>
+    </div>
+</section>
+
+<section id="services" style="background-color: #1f1f1f;">
+    <h2 class="section-title">Наши Услуги</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Тренажерный зал</h3>
+            <p>Просторная зона с премиальным оборудованием TechnoGym и Hammer Strength. Кардио-зона с панорамным видом.</p>
+        </div>
+        <div class="card">
+            <h3>Групповые программы</h3>
+            <p>Более 30 направлений: Yoga, Pilates, TRX, Zumba, BodyPump. Занятия для любого уровня подготовки.</p>
+        </div>
+        <div class="card">
+            <h3>Аква-зона</h3>
+            <p>25-метровый бассейн с системой очистки серебром. Зона гидромассажа и детская школа плавания.</p>
+        </div>
+        <div class="card">
+            <h3>SPA & Relax</h3>
+            <p>Финская сауна, турецкий хаммам, массажные кабинеты и фито-бар для восстановления после тренировок.</p>
+        </div>
+    </div>
+</section>
+
+<section id="trainers">
+    <h2 class="section-title">Команда</h2>
+    <div class="grid">
+        <div class="card trainer-card">
+            <div class="trainer-img" style="background: url('https://source.unsplash.com/200x200/?fitness,trainer,man') center/cover;"></div>
+            <h3>Алексей Смирнов</h3>
+            <p class="accent">Старший тренер</p>
+            <p>Специализация: Силовой тренинг, кроссфит.</p>
+        </div>
+        <div class="card trainer-card">
+            <div class="trainer-img" style="background: url('https://source.unsplash.com/200x200/?fitness,trainer,woman') center/cover;"></div>
+            <h3>Елена Новикова</h3>
+            <p class="accent">Инструктор йоги</p>
+            <p>Специализация: Хатха-йога, пилатес, стретчинг.</p>
+        </div>
+        <div class="card trainer-card">
+            <div class="trainer-img" style="background: url('https://source.unsplash.com/200x200/?coach,fitness') center/cover;"></div>
+            <h3>Дмитрий Волков</h3>
+            <p class="accent">Тренер по плаванию</p>
+            <p>Специализация: Обучение плаванию, аквааэробика.</p>
+        </div>
+    </div>
+</section>
+
+<section id="contact" style="background-color: #1f1f1f;">
+    <h2 class="section-title">Контакты</h2>
+    <div class="grid" style="grid-template-columns: 1fr 1fr;">
+        <div>
+            <h3 class="accent">Мы ждем вас</h3>
+            <p>📍 г. Москва, ул. Спортивная, д. 10</p>
+            <p>📞 +7 (999) 000-00-00</p>
+            <p>✉️ info@atletika-club.ru</p>
+            <p>⏰ Пн-Пт: 07:00 - 23:00<br>Сб-Вс: 09:00 - 22:00</p>
+        </div>
+        <div>
+            <form>
+                <input type="text" placeholder="Ваше имя" required>
+                <input type="tel" placeholder="Телефон" required>
+                <textarea rows="4" placeholder="Сообщение"></textarea>
+                <button type="submit" class="btn" style="border: none; cursor: pointer; width: 100%;">Отправить</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2024 Фитнес-клуб "Атлетика". Все права защищены.</p>
+    <div style="margin-top: 20px;">
+        <a href="#" style="color: #666; text-decoration: none; margin: 0 10px;">Instagram</a>
+        <a href="#" style="color: #666; text-decoration: none; margin: 0 10px;">VKontakte</a>
+        <a href="#" style="color: #666; text-decoration: none; margin: 0 10px;">Telegram</a>
+    </div>
+</footer>
+
+<script>
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
+"""
+
+with open("fitness_club.html", "w", encoding="utf-8") as f:
+    f.write(html_content)
+
+print("fitness_club.html created.")
