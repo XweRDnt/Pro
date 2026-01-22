@@ -1,15 +1,15 @@
-<!DOCTYPE html>
+<! DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IronFit | Твоя лучшая форма</title>
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap. min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Custom CSS - ИСПРАВЛЕНО -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body data-bs-spy="scroll" data-bs-target="#navbar-example" data-bs-offset="80">
 
@@ -49,16 +49,16 @@
             <div class="row align-items-center">
                 <div class="col-md-6 mb-4 mb-md-0 animate-on-scroll">
                     <!-- Заглушка для изображения -->
-                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Gym" class="img-fluid rounded shadow">
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48? ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Gym" class="img-fluid rounded shadow">
                 </div>
                 <div class="col-md-6 animate-on-scroll">
                     <h2 class="fw-bold mb-3">Устали откладывать "на понедельник"?</h2>
-                    <p class="text-secondary mb-4">Многие начинают и бросают, потому что нет поддержки и четкой системы. В IronFit мы не просто даем доступ к тренажерам.</p>
+                    <p class="text-secondary mb-4">Многие начинают и бросают, потому что нет поддержки и четкой системы.  В IronFit мы не только предоставляем оборудование, но и создаем условия для вашего успеха.</p>
                     <div class="d-flex align-items-start mb-3">
                         <i class="fas fa-check-circle text-primary fa-2x me-3"></i>
                         <div>
                             <h5>Индивидуальный подход</h5>
-                            <p class="text-secondary small">Программа тренировок под ваши цели и здоровье.</p>
+                            <p class="text-secondary small">Программа тренировок под ваши цели и здоровье. </p>
                         </div>
                     </div>
                     <div class="d-flex align-items-start">
@@ -151,7 +151,7 @@
                         <div class="card-body">
                             <h2 class="card-title pricing-card-title">1900₽<small class="text-muted fw-light">/мес</small></h2>
                             <ul class="list-unstyled mt-3 mb-4">
-                                <li>Посещение до 17:00</li>
+                                <li>Посещение до 17: 00</li>
                                 <li>Тренажерный зал</li>
                                 <li>Общие раздевалки</li>
                                 <li class="text-muted text-decoration-line-through">Бассейн и сауна</li>
@@ -226,7 +226,7 @@
                             <input type="tel" name="phone" class="form-control bg-dark text-white border-secondary" placeholder="Телефон" required>
                         </div>
                         <div class="mb-3">
-                            <textarea name="message" class="form-control bg-dark text-white border-secondary" rows="3" placeholder="Цель тренировок (похудение, набор массы...)"></textarea>
+                            <textarea name="message" class="form-control bg-dark text-white border-secondary" rows="3" placeholder="Цель тренировок (похудение, набор массы, общий фитнес)" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary w-100 py-3 fw-bold">Отправить заявку</button>
                     </form>
@@ -241,7 +241,7 @@
                     </ul>
                     <!-- Карта (iframe заглушка) -->
                     <div class="ratio ratio-16x9 border border-secondary rounded">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.1!2d37.6!3d55.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTXCsDQyJzAwLjAiTiAzN8KwMzYnMDAuMCJF!5e0!3m2!1sen!2sru!4v1600000000000!5m2!1sen!2sru" allowfullscreen="" loading="lazy"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.1! 2d37.6!3d55.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1! 3m3!1m2! 1s0x0%3A0x0! 2zNTXCsDQyJzAwLjAiTiAzN8KwMzYnMDAuMCJF!2m2!1d37.6!2d55.7!3e0" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
             </div>
@@ -260,8 +260,8 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- Scripts - ИСПРАВЛЕНО -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
