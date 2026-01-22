@@ -1,0 +1,69 @@
+/* Основные настройки */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #000;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Переопределение цвета Bootstrap Primary */
+.text-primary { color: #e31c25 !important; }
+.bg-primary { background-color: #e31c25 !important; }
+.border-primary { border-color: #e31c25 !important; }
+.btn-primary {
+    background-color: #e31c25;
+    border-color: #e31c25;
+}
+.btn-primary:hover {
+    background-color: #c4131b;
+    border-color: #c4131b;
+}
+
+/* Hero Section (Первый экран) */
+#hero {
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+    position: relative;
+}
+
+.bg-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Затемнение фона */
+}
+
+/* Карточки и эффекты */
+.card {
+    transition: transform 0.3s ease;
+}
+.hover-effect:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(227, 28, 37, 0.2);
+}
+.transform-scale {
+    transform: scale(1.05);
+    border: 2px solid #e31c25;
+}
+
+/* Анимации появления (класс добавляется JS) */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Задержки анимации */
+.delay-1 { transition-delay: 0.2s; }
+.delay-2 { transition-delay: 0.4s; }
+
+/* Форма */
+.form-control:focus {
+    background-color: #212529;
+    color: #fff;
+    border-color: #e31c25;
+    box-shadow: 0 0 0 0.25rem rgba(227, 28, 37, 0.25);
+}
