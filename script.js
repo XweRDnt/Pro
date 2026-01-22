@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     
-    // 3.1 Плавная прокрутка для якорных ссылок (в современных браузерах работает через CSS scroll-behavior, но для надежности JS)
+    // 3.1 Плавная прокрутка для якорных ссылок
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const navbarToggler = document.querySelector('.navbar-toggler');
                 const collapse = document.querySelector('.navbar-collapse');
                 if (window.getComputedStyle(navbarToggler).display !== 'none') {
-                    bootstrap.Collapse.getInstance(collapse).hide();
+                    bootstrap. Collapse.getInstance(collapse).hide();
                 }
             }
         });
@@ -21,11 +21,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 3.1 Анимация появления блоков при скролле (Intersection Observer)
     const observerOptions = {
-        threshold: 0.2 // Срабатывает, когда 20% элемента видно
+        threshold:  0.2 // Срабатывает, когда 20% элемента видно
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
+        entries. forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
                 observer.unobserve(entry.target); // Анимировать только один раз
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }, observerOptions);
 
-    document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+    document.querySelectorAll('. animate-on-scroll').forEach((el) => {
         observer.observe(el);
     });
 
