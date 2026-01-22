@@ -1,4 +1,4 @@
-/* Основные настройки */
+/* О��новные настройки */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #000;
@@ -22,7 +22,7 @@ body {
 /* Hero Section (Первый экран) */
 #hero {
     height: 100vh;
-    background: url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+    background: url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438? ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
     position: relative;
 }
 
@@ -36,19 +36,19 @@ body {
 .card {
     transition: transform 0.3s ease;
 }
-.hover-effect:hover {
+.hover-effect: hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 20px rgba(227, 28, 37, 0.2);
 }
 .transform-scale {
     transform: scale(1.05);
-    border: 2px solid #e31c25;
+    border:  2px solid #e31c25;
 }
 
 /* Анимации появления (класс добавляется JS) */
 .animate-on-scroll {
     opacity: 0;
-    transform: translateY(30px);
+    transform:  translateY(30px);
     transition: all 0.8s ease-out;
 }
 .animate-on-scroll.visible {
